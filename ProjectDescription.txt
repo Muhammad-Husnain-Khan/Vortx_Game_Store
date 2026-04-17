@@ -1,0 +1,78 @@
+The Online Game Management System is a database driven platform that
+manages digital games, publishers, platforms, categories, pricing, and game
+listings. It provides a centralized system to store game details and automate
+operations like game listing, searching, and managing thumbnails and
+metadata.
+
+Project Body
+
+Description
+The Online Game Management System is a web-based marketplace that
+allows users to browse, buy and view games, while admins can manage
+game listings, categories, and publishers. The system maintains structured
+information such as game name, description, genre, price, ratings, release
+date, and thumbnail images. It aims to provide searching, filtering, and
+reliable data storage using a relational database.
+Existing Systems
+Although popular platforms such as Steam, Epic Games Store, and Microsoft
+Store provide digital game marketplaces, they operate as separate
+ecosystems. A major limitation of these stores is that not all games are
+available on one platform, meaning users often need to maintain multiple
+accounts to access different titles. This creates inconvenience in terms of
+game discovery, searching, pricing comparison, and overall user
+experience, since the same user must browse multiple stores to find a desired
+game.
+
+Problem Statement:
+Games are spread across platforms like Steam, Epic Games Store, and
+Microsoft Store, so users must browse multiple stores and accounts to find
+what they want. This requires the gamers to maintain multiple store accounts
+and thus causing inconvenience.
+
+Proposed Solution
+To address these issues, we propose an Online Game Management System
+that provides a unified and centralized platform for managing and viewing
+games from multiple sources in one place. The system stores game
+information in a structured relational database, ensuring consistency and
+eliminating duplication. It provides efficient searching, filtering, and
+categorization features so users can easily discover games without switching
+between multiple stores. Overall, our system offers a more convenient
+experience for users and a well-organized management interface for
+administrators.
+Salient Features: (Tentative)
+User Module
+o Browse games
+o Search/filter games by category, price, publisher
+o View game details (thumbnail, description, rating, release date)
+Admin Module
+o Add/update/delete games
+o Manage publishers/developers
+o Manage categories/genres
+o Manage pricing and discounts
+Game Listing Module
+o Store complete metadata of games
+o Save thumbnail image path linked with game record
+
+Database Query Module
+o SQL-based filtering, sorting, and reporting (top-rated games, latest
+games, etc.)
+
+Technologies / Database Engine
+• MS SQL Server
+Programming Language
+• Frontend: REACT JS , Tailwind CSS
+• Backend: Express JS
+• Auth: FireBase (JWT)
+Platform:
+• Web-based system (runs on any OS via browser)
+
+Database Design Preliminary
+List of Tables (Entities)
+• Users
+• Administrators
+• Games Table
+• Game Categories
+• Orders
+• Review Tables
+(These is a tentative list of tables. furthermore, will be added
+when required)

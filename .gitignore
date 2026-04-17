@@ -1,0 +1,104 @@
+# =============================================
+# NODE.JS - Dependencies
+# =============================================
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store/
+
+# =============================================
+# BUILD OUTPUT
+# =============================================
+dist/
+build/
+out/
+.next/
+.vite/
+.turbo/
+.parcel-cache/
+
+# =============================================
+# ENVIRONMENT FILES - CRITICAL (secrets)
+# =============================================
+.env
+.env.local
+.env.*.local
+
+# =============================================
+# CREDENTIALS & KEYS
+# =============================================
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+serviceAccountKey.json
+firebase-key.json
+
+# =============================================
+# FIREBASE
+# =============================================
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
+# =============================================
+# DATABASE FILES
+# =============================================
+*.mdf
+*.ldf
+*.bak
+*.sqlite
+*.db
+
+# =============================================
+# OPERATING SYSTEM FILES
+# =============================================
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+
+# =============================================
+# IDE & EDITORS
+# =============================================
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.user
+
+# =============================================
+# TEMP FILES & LOGS
+# =============================================
+tmp/
+temp/
+*.tmp
+*.temp
+*.log
+logs/
+
+# =============================================
+# TESTING & CODE COVERAGE
+# =============================================
+coverage/
+.nyc_output/
+*.lcov
+
+# =============================================
+# CACHES
+# =============================================
+.eslintcache
+.prettiercache
+.tsbuildinfo
+*.tsBuildInfo
+.cache/
