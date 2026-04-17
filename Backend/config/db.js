@@ -1,24 +1,41 @@
-const sql = require('mssql')
+const sql = require('mssql');
+
 
 const config = {
-  server: process.env.DB_HOST || 'localhost',
-  port: parseInt(process.env.DB_PORT) || 1433,
-  database: process.env.DB_NAME || 'VortxGameStore',
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
+  user: 'sa',
+  password: '123',
+  server: 'localhost',
+  // server: 'localhost\\SQLEXPRESS',  // Uncomment for SQL Express
+  database: 'VORTX_GameStore',
   options: {
-    encrypt: false,
-    trustServerCertificate: true
+    encrypt: true,
+    trustServerCertificate: true  
+  },
+  pool: {
+    max: 10,
+    min: 0,
+    idleTimeoutMillis: 30000
   }
-}
+};
+
+let pool;
 
 async function connectDB() {
   try {
-    await sql.connect(config)
-    console.log('Connected to MS SQL Server')
+    pool = await sql.connect(config);
+    console.log('Connected to VORTX_GameStore database');
+    return pool;
   } catch (err) {
-    console.error('Database connection failed:', err)
+    console.error('Database connection failed:', err.message);
+    process.exit(1);
   }
 }
 
-module.exports = { connectDB, sql }
+function getPool() {
+  if (!pool) {
+    throw new Error('Database not connected. Call connectDB() first.');
+  }
+  return pool;
+}
+
+module.exports = { connectDB, getPool, sql };
