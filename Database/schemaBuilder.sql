@@ -2,6 +2,7 @@ CREATE DATABASE VORTX_GameStore;
 GO;
 USE VORTX_GameStore;
 
+
 CREATE TABLE Users (
     UserID INT PRIMARY KEY IDENTITY(1,1),
     Username VARCHAR(50) NOT NULL UNIQUE,
@@ -9,26 +10,14 @@ CREATE TABLE Users (
     Password VARCHAR(255) NOT NULL,
     FirstName VARCHAR(50) NOT NULL,
     LastName VARCHAR(50) NOT NULL,
-    DateOfBirth DATE NOT NULL,
-    Country VARCHAR(50) NOT NULL,
+    DateOfBirth DATE NULL,
+    Country VARCHAR(50) NULL,
+    Role VARCHAR(20) NOT NULL DEFAULT 'user'
+        CHECK (Role IN ('user', 'admin')),
     AccountCreatedDate DATETIME DEFAULT GETDATE(),
     LastLoginDate DATETIME NULL,
     IsActive BIT DEFAULT 1,
-    FirebaseUID VARCHAR(128) NOT NULL
-);
-
-
-
-CREATE TABLE Administrators (
-    AdminID INT PRIMARY KEY IDENTITY(1,1),
-    Username VARCHAR(50) NOT NULL UNIQUE,
-    Email VARCHAR(100) NOT NULL UNIQUE,
-    Password VARCHAR(255) NOT NULL,
-    FullName VARCHAR(100) NOT NULL,
-    CreatedDate DATETIME DEFAULT GETDATE(),
-    LastLoginDate DATETIME NULL,
-    IsActive BIT DEFAULT 1,
-    FirebaseUID VARCHAR(128) NOT NULL
+    FirebaseUID VARCHAR(128) NOT NULL UNIQUE
 );
 
 
